@@ -47,35 +47,41 @@ public class ManterPedidoController {
 		if(null != session.getAttribute("Carrinho")) {
 			listaProduto = (List<Produto>)session.getAttribute("Carrinho");
 		}
-		Produto produto = produtoService.selecionarProduto(codigoProduto);
-		produto.setQtdProduto(qtdProduto);
-		listaProduto.add(produto);
-		float desconto = 0;
-		float subTotal = 0;
-		float total = 0;
-		for (Produto produtos : listaProduto) {
-			desconto += produtos.getDesconto();
-			subTotal += (produtos.getPreco() * produto.getQtdProduto());
+		try {
+			Produto produto = produtoService.selecionarProduto(codigoProduto);
+			produto.setQtdProduto(qtdProduto);
+			listaProduto.add(produto);
+			float desconto = 0;
+			float subTotal = 0;
+			float total = 0;
+			for (Produto produtos : listaProduto) {
+				desconto += produtos.getDesconto();
+				subTotal += (produtos.getPreco() * produto.getQtdProduto());
+			}
+			total = subTotal - desconto;
+			model.addAttribute("Total", total);
+			model.addAttribute("Desconto", desconto);
+			model.addAttribute("SubTotal", subTotal);
+			session.setAttribute("Carrinho", listaProduto);
+			return "redirect:/carrinho";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
 		}
-		total = subTotal - desconto;
-		model.addAttribute("Total", total);
-		model.addAttribute("Desconto", desconto);
-		model.addAttribute("SubTotal", subTotal);
-		session.setAttribute("Carrinho", listaProduto);
-		return "redirect:/carrinho";
+		
 	}
 
 	@RequestMapping("/confirmacao")
 	public String gerarPedido(Pedido pedido, HttpSession session, Model model, @RequestParam String bairro, 
 			@RequestParam String endereco, @RequestParam int numCasa, @RequestParam String formaPagamento) {
-
 		try {
 			Cliente cliente = (Cliente)session.getAttribute("clienteLogado");
 			criarPedido(pedido, bairro, endereco, numCasa, formaPagamento, cliente);
 			model.addAttribute(pedido);
 			@SuppressWarnings("unchecked")
 			List<Produto> carrinho = (List<Produto>)session.getAttribute("Carrinho");
-			criarItemPedido(pedido, carrinho);
+			//criarItemPedido(pedido, carrinho);
+			itemPedidoService.criarItemPedido(pedido, carrinho);
 			session.removeAttribute("Carrinho");
 		} catch (IOException e) {
 			return "error";
@@ -83,18 +89,18 @@ public class ManterPedidoController {
 		return "confirmacao";
 	}
 
-	private void criarItemPedido(Pedido pedido, List<Produto> carrinho) throws IOException {
-		for (Produto produto : carrinho) {
-			ItemPedido itemPedido = new ItemPedido();
-			itemPedido.setDesconto(produto.getDesconto());
-			itemPedido.setNome(produto.getNome());
-			itemPedido.setPedido(pedido);
-			itemPedido.setProduto(produto);
-			itemPedido.setPreco(produto.getPreco());
-			itemPedido.setQtdItem(produto.getQtdProduto());
-			itemPedidoService.criarItemPedido(itemPedido);
-		}
-	}
+//	private void criarItemPedido(Pedido pedido, List<Produto> carrinho) throws IOException {
+//		for (Produto produto : carrinho) {
+//			ItemPedido itemPedido = new ItemPedido();
+//			itemPedido.setDesconto(produto.getDesconto());
+//			itemPedido.setNome(produto.getNome());
+//			itemPedido.setPedido(pedido);
+//			itemPedido.setProduto(produto);
+//			itemPedido.setPreco(produto.getPreco());
+//			itemPedido.setQtdItem(produto.getQtdProduto());
+//			itemPedidoService.criarItemPedido(itemPedido);
+//		}
+//	}
 
 	private void criarPedido(Pedido pedido, String bairro, String endereco, int numCasa, String formaPagamento,
 			Cliente cliente) throws IOException {

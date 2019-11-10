@@ -40,23 +40,39 @@ public class ManterProdutoController {
 
 	@RequestMapping("/produto")
 	public String selecionarProduto(@RequestParam int id,@Valid Produto produto, BindingResult result, Model model) {
-		produto = produtoService.selecionarProduto(id);
-		model.addAttribute("produtos", produto);
-		return "produto";
+		try {
+			produto = produtoService.selecionarProduto(id);
+			model.addAttribute("produtos", produto);
+			return "produto";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 	@RequestMapping(value ="/listarProduto", method = RequestMethod.GET)
 	public String telaListaProdutos(@RequestParam String tipo,Model model) {
-		List<Produto> produtos = produtoService.buscarProdutos(tipo);
-		model.addAttribute("listProdutos", produtos);
-		return "listaProduto";
+		try {
+			List<Produto> produtos = produtoService.buscarProdutos(tipo);
+			model.addAttribute("listProdutos", produtos);
+			return "listaProduto";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
+		
 	}
 
 	@RequestMapping("/atualizarProduto")
 	public String telaAtualizarProduto(@RequestParam int id,@Valid Produto produto, BindingResult result, Model model) {
-		produto = produtoService.selecionarProduto(id);
-		model.addAttribute("produtos", produto);
-		return "atualizarProduto";
+		try {
+			produto = produtoService.selecionarProduto(id);
+			model.addAttribute("produtos", produto);
+			return "atualizarProduto";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 	@RequestMapping(value ="/atualizarUmProduto", method = RequestMethod.POST, consumes = {"multipart/form-data"})
@@ -73,9 +89,14 @@ public class ManterProdutoController {
 	}
 
 	@RequestMapping("/excluirProduto")
-	public ModelAndView excluirProduto(@RequestParam int id) {
-		produtoService.removerProduto(id);
-		return new ModelAndView("redirect:/adminProduto");
+	public String excluirProduto(@RequestParam int id) {
+		try {
+			produtoService.removerProduto(id);
+			return "redirect:/adminProduto";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 

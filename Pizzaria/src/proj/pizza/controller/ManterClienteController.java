@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import proj.pizza.bean.Cliente;
 import proj.pizza.service.ClienteService;
@@ -52,22 +51,37 @@ public class ManterClienteController {
 	}
 
 	@RequestMapping("/excluirCliente")
-	public ModelAndView excluirUmCliente(@RequestParam int id) {
-		clienteService.excluirCliente(id);
-		return new ModelAndView("redirect:/adminCliente");
+	public String excluirUmCliente(@RequestParam int id) {
+		try {
+			clienteService.excluirCliente(id);
+			return "redirect:/adminCliente";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 	@RequestMapping("/atualizarCliente")
 	public String telaAtualizarCliente(@RequestParam int idCliente, @Valid Cliente cliente, BindingResult result, Model model) {
-		cliente = clienteService.selecionarCliente(idCliente);
-		model.addAttribute("clientes", cliente);
-		return "atualizarCliente";
+		try {
+			cliente = clienteService.selecionarCliente(idCliente);
+			model.addAttribute("clientes", cliente);
+			return "atualizarCliente";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 	@RequestMapping("/atualizarUmCliente")
-	public ModelAndView atualizarUmCliente(@Valid Cliente cliente, @RequestParam int idCliente, BindingResult result) {
-		clienteService.atualizarCliente(cliente);
-		return new ModelAndView("redirect:/adminCliente");
+	public String atualizarUmCliente(@Valid Cliente cliente, @RequestParam int idCliente, BindingResult result) {
+		try {
+			clienteService.atualizarCliente(cliente);
+			return "redirect:/adminCliente";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
 	}
 
 	@RequestMapping("/cadastrarCliente")

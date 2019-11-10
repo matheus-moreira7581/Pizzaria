@@ -29,16 +29,16 @@ public class ClienteService {
 	}
 	
 	@Transactional
-	public void excluirCliente(int id) {
+	public void excluirCliente(int id) throws IOException{
 		dao.excluirCliente(id);
 	}
 	
 	@Transactional
-	public int atualizarCliente(Cliente cliente) {
+	public int atualizarCliente(Cliente cliente) throws IOException {
 		return dao.atualizar(cliente);
 	}
 	
-	public Cliente selecionarCliente(int id) {
+	public Cliente selecionarCliente(int id) throws  IOException {
 		return dao.selecionar(id);
 	}
 	

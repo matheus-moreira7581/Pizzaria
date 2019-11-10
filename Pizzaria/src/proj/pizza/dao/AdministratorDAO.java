@@ -15,15 +15,15 @@ public class AdministratorDAO {
 	@PersistenceContext
 	EntityManager manager;
 	
-	public void criar(Administrator administrator) {
+	public void criar(Administrator administrator) throws IOException {
 		manager.persist(administrator);
 	}
 	
-	public void atualizar(Administrator administrator) {
+	public void atualizar(Administrator administrator) throws IOException {
 		manager.merge(administrator);
 	}
 	
-	public Administrator selecionar(int codAdm) {
+	public Administrator selecionar(int codAdm) throws IOException {
 		return manager.find(Administrator.class, codAdm);
 	}
 	

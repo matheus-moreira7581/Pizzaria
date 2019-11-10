@@ -20,7 +20,7 @@ public class AutorizadorInterceptorCliente extends HandlerInterceptorAdapter{
 				|| uri.endsWith("adminCliente") || uri.endsWith("validar_login_admin") || uri.endsWith("atualizarCliente") 
 				|| uri.endsWith("atualizarUmCliente") || uri.endsWith("excluirCliente") || uri.endsWith("admin_logoff") 
 				|| uri.endsWith("cadastro") || uri.endsWith("cadastrarCliente") || uri.endsWith("index") 
-				|| uri.contains("css") || uri.contains("js") || uri.contains("img")) {
+				|| uri.contains("css") || uri.contains("js") || uri.contains("img") || uri.contains("rest")) {
 			return true;
 		}
 

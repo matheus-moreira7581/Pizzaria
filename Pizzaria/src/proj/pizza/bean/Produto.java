@@ -1,5 +1,7 @@
 package proj.pizza.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="produto")
-public class Produto {
+public class Produto implements Serializable{
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

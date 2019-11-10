@@ -19,18 +19,18 @@ public class ClienteDAO {
 	EntityManager manager;
 	
 	
-	public int criar(Cliente cliente) {
+	public int criar(Cliente cliente) throws IOException {
 		manager.persist(cliente);
 		return cliente.getIdCliente();
 	}
 	
 	
-	public void excluirCliente(int id) {
+	public void excluirCliente(int id) throws IOException {
 		Cliente cliente = manager.find(Cliente.class, id);
 		manager.remove(cliente);
 	}
 	
-	public Cliente selecionar(int id) {
+	public Cliente selecionar(int id) throws IOException {
 		return manager.find(Cliente.class, id);
 	}
 	
@@ -49,7 +49,7 @@ public class ClienteDAO {
 	
 	
 	
-	public int atualizar(Cliente cliente) {
+	public int atualizar(Cliente cliente) throws IOException {
 		Cliente cliente2 = manager.merge(cliente);
 		cliente2.setIdCliente(cliente.getIdCliente());
 		cliente2.setCpf(cliente.getCpf());
@@ -64,7 +64,7 @@ public class ClienteDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Cliente> listarClientes()throws IOException {
+	public List<Cliente> listarClientes() throws IOException {
 		String jpql = "select p from Cliente p";
 		Query query = manager.createQuery(jpql);
 		

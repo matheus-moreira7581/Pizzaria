@@ -1,5 +1,6 @@
 package proj.pizza.dao;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -16,12 +17,12 @@ public class ProdutoDAO {
 	EntityManager manager;
 	
 	
-	public int criar(Produto produto) {
+	public int criar(Produto produto) throws IOException{
 		manager.persist(produto);
 		return produto.getCodigo();
 	}
 	
-	public int atualizar(Produto produto) {
+	public int atualizar(Produto produto) throws IOException{
 		Produto produto2 = manager.merge(produto);
 		produto2.setCodigo(produto.getCodigo());
 		produto2.setDesconto(produto.getDesconto());
@@ -34,18 +35,18 @@ public class ProdutoDAO {
 		return produto2.getCodigo();
 	}
 	
-	public int remover(int id) {
+	public int remover(int id) throws IOException {
 		Produto produto = manager.find(Produto.class, id);
 		manager.remove(produto);
 		return produto.getCodigo();
 	}
 	
-	public Produto selecionar(int codigo) {
+	public Produto selecionar(int codigo) throws IOException {
 		return manager.find(Produto.class, codigo);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Produto> listarProduto(String tipo) {
+	public List<Produto> listarProduto(String tipo) throws IOException{
 		System.out.println("O tipo é: "+tipo);
 		String jpql;
 		Query query;

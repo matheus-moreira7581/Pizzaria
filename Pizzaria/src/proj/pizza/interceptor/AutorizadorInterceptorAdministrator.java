@@ -16,7 +16,7 @@ public class AutorizadorInterceptorAdministrator extends HandlerInterceptorAdapt
 				||  uri.endsWith("listarProduto") || uri.endsWith("produto") || uri.endsWith("addCarrinho") 
 				|| uri.endsWith("carrinho") || uri.endsWith("pagamento") || uri.endsWith("confirmacao") || uri.endsWith("cadastro") 
 				|| uri.endsWith("cadastrarCliente") || uri.endsWith("index") || uri.endsWith("logoff") 
-				|| uri.contains("css") || uri.contains("js") || uri.contains("img")) 	{
+				|| uri.contains("css") || uri.contains("js") || uri.contains("img") || uri.contains("rest")) 	{
 			return true;
 		}
 		

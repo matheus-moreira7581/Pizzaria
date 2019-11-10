@@ -24,7 +24,7 @@ public class ManterAdminController {
 	AdministratorService administratorService;
 	ProdutoService produtoService;
 	ClienteService clienteService;
-
+	
 	@Autowired
 	public ManterAdminController(AdministratorService ads, ProdutoService ps, ClienteService cs) {
 		administratorService = ads;
@@ -65,9 +65,15 @@ public class ManterAdminController {
 	
 	@RequestMapping("/adminProduto")
 	public String telaAdminProduto(Model model) {
-		List<Produto> produtos = produtoService.buscarProdutos(Produto.ALL);
-		model.addAttribute("listProdutos", produtos);
-		return "adminProduto";
+		try {
+			List<Produto> produtos = produtoService.buscarProdutos(Produto.ALL);
+			model.addAttribute("listProdutos", produtos);
+			return "adminProduto";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro";
+		}
+		
 	}
 	
 	@RequestMapping("/adminCliente")

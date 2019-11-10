@@ -1,6 +1,8 @@
 package proj.pizza.service;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +21,9 @@ public class PedidoService {
 	@Transactional
 	public int criarPedido(Pedido pedido) throws IOException{
 		return dao.inserirPedido(pedido);
+	}
+	
+	public List<Pedido> buscarPedido() throws IOException {
+		return dao.listaPedido();
 	}
 }

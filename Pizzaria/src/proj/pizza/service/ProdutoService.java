@@ -51,20 +51,20 @@ public class ProdutoService {
 	}
 	
 	@Transactional
-	public int atualizarProduto(Produto produto) {
+	public int atualizarProduto(Produto produto) throws IOException{
 		return dao.atualizar(produto);
 	}
 	
 	@Transactional
-	public int removerProduto(int id) {
+	public int removerProduto(int id) throws IOException{
 		return dao.remover(id);
 	}
 	
-	public Produto selecionarProduto(int codigo) {
+	public Produto selecionarProduto(int codigo) throws IOException{
 		return dao.selecionar(codigo);
 	}
 	
-	public List<Produto> buscarProdutos(String tipo) {
+	public List<Produto> buscarProdutos(String tipo) throws IOException{
 		
 		return dao.listarProduto(tipo);
 	}
