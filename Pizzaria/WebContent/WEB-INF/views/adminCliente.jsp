@@ -49,50 +49,50 @@
                 
 
                 <p>Todos os clientes cadastrados no sistema:</p>  
-
-                <table class="table table-bordered">
-
-                  <thead>
-                    <tr>
-                    	<th>ID</th>
-                    	<th>CPF</th>
-                    	<th>Nome</th>
-                    	<th>Sobrenome</th>
-                    	<th>EMAIL</th>
-                    	<th>Bairro</th>
-                    	<th>Endereço</th>
-                    	<th>Numero</th>
-                    	<th>Senha</th>
-                    	<th>Ação</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                  	<c:forEach var="cliente" items="${listCliente}">
-                  		<form action="atualizarCliente" method="get">
-		                    <tr>
-		                    	<td>${cliente.idCliente}</td>
-		                    	<td>${cliente.cpf}</td>
-			                    <td>${cliente.nome}</td>
-			                    <td>${cliente.sobrenome}</td>
-			                    <td>${cliente.email}</td>
-			                    <td>${cliente.bairro}</td>
-			                    <td>${cliente.endereco}</td>
-			                    <td>${cliente.numCasa}</td>
-			                    <td>${cliente.senha}</td>
-			                    <td>
-			                    	<button class="btn btn-danger" formaction="excluirCliente" name="id" value="${cliente.idCliente}">Excluir</button>
-			                    	<button name="idCliente"  value="${cliente.idCliente}" class="btn btn-success">Atualizar</button>
-			                    </td>
-		                    </tr>
-	                    </form>
-                    </c:forEach>
-                   
-                    
-                  </tbody>
-
-                </table>
-
+				<div class="table-responsive">
+	                <table class="table table-bordered">
+	
+	                  <thead>
+	                    <tr>
+	                    	<th>ID</th>
+	                    	<th>CPF</th>
+	                    	<th>Nome</th>
+	                    	<th>Sobrenome</th>
+	                    	<th>EMAIL</th>
+	                    	<th>Bairro</th>
+	                    	<th>Endereço</th>
+	                    	<th>Numero</th>
+	                    	<th>Senha</th>
+	                    	<th>Ação</th>
+	                    </tr>
+	                  </thead>
+	
+	                  <tbody>
+	                  	<c:forEach var="cliente" items="${listCliente}">
+	                  		<form action="atualizarCliente" method="get">
+			                    <tr>
+			                    	<td>${cliente.idCliente}</td>
+			                    	<td>${cliente.cpf}</td>
+				                    <td>${cliente.nome}</td>
+				                    <td>${cliente.sobrenome}</td>
+				                    <td>${cliente.email}</td>
+				                    <td>${cliente.bairro}</td>
+				                    <td>${cliente.endereco}</td>
+				                    <td>${cliente.numCasa}</td>
+				                    <td>${cliente.senha}</td>
+				                    <td>
+				                    	<button class="btn btn-danger" formaction="excluirCliente" name="id" value="${cliente.idCliente}">Excluir</button>
+				                    	<button name="idCliente"  value="${cliente.idCliente}" class="btn btn-success">Atualizar</button>
+				                    </td>
+			                    </tr>
+		                    </form>
+	                    </c:forEach>
+	                   
+	                    
+	                  </tbody>
+	
+	                </table>
+				</div>
               </div>
 
             <!-- footer  -->
