@@ -44,7 +44,7 @@
 
 
 				<a href="index.html" class="nav-brand h1 mb-0 text-success "><img
-					style="width: 100px;" src="./img/core.png" alt=""></a>
+					style="width: 100px;" src="./img/coree.png" alt=""></a>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSite">

@@ -1,6 +1,6 @@
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	           <nav id="homeinicio" class="navbar navbar-expand-lg navbar-light">
-                <a href="index" class="nav-brand h1 mb-0 text-danger "><img style="width: 100px;" src="./img/core.png" alt=""></a>
+                <a href="index" class="nav-brand h1 mb-0 text-danger "><img style="width: 100px;" src="./img/coree.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                     <span class="navbar-toggler-icon"></span>
                 </button>   
