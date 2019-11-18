@@ -24,40 +24,101 @@
     <title>Home</title>
 </head>
 <body>
-     <div class="pai">
+    <div class="pai">
         <div class="corpo">
-            <c:import url="menu.jsp" />
+            <nav id="homeinicio" class="navbar navbar-expand-lg navbar-light">
+
+
+                <a href="index" class="nav-brand h1 mb-0 text-danger "><img style="width: 100px;" src="./img/coree.png"
+                        alt=""></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSite">
+
+
+                    <div class="input-group col-md-10 my-2 ">
+
+                        <div class="input-group-prepend navbar-item ">
+
+                            <button class="btn btn-success  border-success input-group-text" id="basic-addon1"><img
+                                    src="https://img.icons8.com/material-rounded/24/000000/search.png"></button>
+
+                        </div>
+
+                        <input type="text" class="form-control col-md-6"
+                            placeholder="Search for Products, Brands and More.." aria-label="Username"
+                            aria-describedby="basic-addon1">
+
+                    </div>
+                    <c:if test="${empty clienteLogado}">
+                        <a href="cadastro" class="btn text-sucess">Cadastrar</a>
+                        <a href="telaLogin" class="btn btn-success">Entrar</a>
+                    </c:if>
+                    <c:if test="${not empty clienteLogado}">
+                        <a href="logoff" class="btn btn-success">Logoff</a>
+                    </c:if>
+
+
+
+                </div>
+
+            </nav>
             <hr>
             <hr>
             <hr>
             <hr>
             <h1>Escolha uma forma de pagamento</h1>
             <hr>
-            <form class="pagamento bg-success text-white" action="confirmacao" method="post">
-                <div class="pag">
-                    <label for="credito">Crédito/Débito</label>
+            <form class="pagamento  text-white" action="confirmacao" method="post">
+                <!-- <div class="pag text-center">
+                    <label class="btn btn-dark" for="credito">Crédito/Débito</label>
                     <input type="radio" name="formaPagamento" value="Cartao" id="credito">
                 </div>
-                <div class="pag">
-                    <label for="dinheiro">Dinheiro</label>
+                <div class="pag text-center">
+                    <label class="btn btn-dark" for="dinheiro">Dinheiro</label>
                     <input type="radio" name="formaPagamento" value="Dinheiro" id="dinheiro">
+                </div> -->
+
+                <div class="pag text-center">
+                    <ul class="payment-methods">
+                        <li class="payment-method paypal">
+                            <input name="formaPagamento" type="radio" id="paypal" value="Cartao">
+                            <label for="paypal">Crédito</label>
+                        </li>
+
+                        <li class="payment-method pagseguro">
+                            <input name="formaPagamento" type="radio" id="pagseguro" value="Dinheiro">
+                            <label for="pagseguro">Dinheiro</label>
+                        </li>
+                    </ul>
                 </div>
-				<div class="tema row bg-dark w-50"><h1 class="text-white">Endereço de entrega</h1></div>
-				<div class="form-row my-3">
-                    <div class="col-md-3 mb-3">
-                      <label for="validationDefault03">Bairro</label>
-                      <input type="text" class="form-control" name="bairro" id="validationDefault03" value="${clienteLogado.bairro }" required>
+
+                <div class="bg-success pagamento mt-5">
+                    <div class="tema row  w-50">
+                        <h1 class="text-white">Endereço de entrega</h1>
                     </div>
-                    <div class="col-md-7 mb-3">
-                      <label for="validationDefault04">Endereco</label>
-                      <input type="text" class="form-control" name="endereco" id="validationDefault04" value="${clienteLogado.endereco }" required>
+                    <div class="form-row my-3">
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault03">Bairro</label>
+                            <input type="text" class="form-control" name="bairro" id="validationDefault03" value="${clienteLogado.bairro }"
+                                required>
+                        </div>
+                        <div class="col-md-7 mb-3">
+                            <label for="validationDefault04">Endereco</label>
+                            <input type="text" class="form-control" name="endereco" id="validationDefault04" value="${clienteLogado.endereco }"
+                                required>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="validationDefault05">Numero</label>
+                            <input type="number" class="form-control" name="numCasa" id="validationDefault05" value="${clienteLogado.numCasa }"
+                                required>
+                        </div>
+                        <button class="btn btn-dark" type="submit">Confirmar</button>
                     </div>
-                    <div class="col-md-2 mb-3">
-                      <label for="validationDefault05">Numero</label>
-                      <input type="number" class="form-control" name="numCasa" id="validationDefault05" value="${clienteLogado.numCasa}" required>
-                    </div>
-                       <button class="btn btn-primary" type="submit">Confirmar</button>
-                 </div>
+                </div>
             </form>
             <hr>
             <hr>
@@ -66,4 +127,5 @@
         </div>
     </div>
 </body>
+
 </html>

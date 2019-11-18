@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
     <!-- js -->
- 
+ 	<script defer src="js/jquery-3.4.1.min.js" ></script>
     <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
+	<script defer src="js/function.js" ></script>
     <script defer src="js/bootstrap.min.js"></script>
 
 
@@ -69,12 +69,12 @@
 
                       <div class="col-md-4 mb-3">
                         <label for="validationDefault01">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="validationDefault01" placeholder="First name" value="Maria" required>
+                        <input type="text" class="form-control" name="nome" id="validationDefault01" placeholder="Digite seu nome" required>
                       </div>
 
                       <div class="col-md-4 mb-3">
                         <label for="validationDefault02">Sobrenome</label>
-                        <input type="text" class="form-control" name="sobrenome" id="validationDefault02" placeholder="Last name" value="Chiquinha" required>
+                        <input type="text" class="form-control" name="sobrenome" id="validationDefault02" placeholder="Digite seu sobrenome" required>
                       </div>
 
                       <div class="col-md-4 mb-3">
@@ -115,25 +115,26 @@
                     <div class="form-row">
                       <div class="col-md-6 mb-3">
                         <label for="validationDefault05">Senha</label>
-                        <input type="password" class="form-control" name="senha" id="validationDefault05" placeholder="Senha.." required>
+                        <input type="password" class="form-control" name="senha" id="password01" placeholder="Senha.." required>
                       </div>
                       
-                       <div class="col-md-6 mb-3">
+                       <div class="col-md-6 mb-3" id="password02-container">
                         <label for="validationDefault05">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="validationDefault05" placeholder="Senha.." required>
+                        <input type="password" class="form-control" id="password02" placeholder="Senha.." required>
                       </div>
+                      
                     </div>
 					
 					<div class="form-row">
-						<div class="col-md-6 mb-3">
+						<div class="col-md-6 mb-3" id="cpf-container">
 							<label for="validadetionDefault06">CPF</label>
-							<input type="text" class="form-control" name=cpf id="validadetionDefault06" required>
+							<input type="text" class="form-control" name=cpf id="cpf" required>
 						</div>
 					</div>
                   
 
 
-                    <button class="btn btn-success" type="submit">Criar Conta</button>
+                    <button class="btn btn-success" type="submit" id="submit-cadastro" disabled="disabled">Criar Conta</button>
                    
 
                   </form>

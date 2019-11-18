@@ -85,7 +85,7 @@ public class ManterClienteController {
 	}
 
 	@RequestMapping("/cadastrarCliente")
-	public String cadastrarNovoCliente(@Valid Cliente cliente) {
+	public String cadastrarNovoCliente(@Valid Cliente cliente, BindingResult result) {
 		try {
 			clienteService.cadastrarCliente(cliente);
 			return "index";
