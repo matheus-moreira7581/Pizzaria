@@ -32,7 +32,7 @@
 <script defer src="js/bootstrap.min.js"></script>
 
 
-<title>Home</title>
+<title>Atualizar Produto</title>
 </head>
 <body>
 
@@ -65,9 +65,6 @@
 
 			</nav>
 
-			<hr>
-			<hr>
-			<hr>
 			<hr>
 
 			<form action="atualizarUmProduto" method="post" id="atualizar" enctype="multipart/form-data">

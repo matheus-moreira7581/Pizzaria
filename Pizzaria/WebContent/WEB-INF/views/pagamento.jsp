@@ -21,7 +21,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script defer src="js/bootstrap.min.js"></script>
 
-    <title>Home</title>
+    <title>Pagamento</title>
 </head>
 <body>
     <div class="pai">
@@ -84,15 +84,17 @@
 
                 <div class="pag text-center">
                     <ul class="payment-methods">
-                        <li class="payment-method paypal">
-                            <input name="formaPagamento" type="radio" id="paypal" value="Cartao">
-                            <label for="paypal">Crédito</label>
+                    	 <li class="payment-method paypal">
+                            <input name="formaPagamento" type="radio" id="paypal" value="Dinheiro" checked="checked">
+                            <label for="paypal">Dinheiro</label>
+                        </li>
+                    
+                        <li class="payment-method pagseguro">
+                            <input name="formaPagamento" type="radio" id="pagseguro" value="Cartao">
+                            <label for="pagseguro">Crédito</label>
                         </li>
 
-                        <li class="payment-method pagseguro">
-                            <input name="formaPagamento" type="radio" id="pagseguro" value="Dinheiro">
-                            <label for="pagseguro">Dinheiro</label>
-                        </li>
+                       
                     </ul>
                 </div>
 

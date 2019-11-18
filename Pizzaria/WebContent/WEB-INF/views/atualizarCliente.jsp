@@ -66,9 +66,6 @@
 			</nav>
 
 			<hr>
-			<hr>
-			<hr>
-			<hr>
 
 			<form action="atualizarUmCliente" method="post" id="atualizar">
 				<h1>Atualizar Cliente</h1>

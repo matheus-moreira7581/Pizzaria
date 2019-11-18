@@ -25,7 +25,7 @@
     <script defer src="js/bootstrap.min.js"></script>
 
 
-    <title>Home</title>
+    <title>Cadastro</title>
 </head>
 <body>
 

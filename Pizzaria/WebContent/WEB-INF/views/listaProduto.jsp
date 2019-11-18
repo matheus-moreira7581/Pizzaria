@@ -26,7 +26,7 @@
     <script defer src="js/bootstrap.min.js"></script>
 
 
-    <title>Home</title>
+    <title>Produtos - ${listProdutos[0].tipo}</title>
 </head>
 <body>
 
@@ -61,7 +61,7 @@
 	                    				<h6>${produto.descricao}</h6>
 	                    				<h1 class="card-text text-dark">R$<fmt:formatNumber type="number" maxFractionDigits="2" value="${produto.preco - produto.desconto}"/></h1>
 	                    				<form action="produto" method="get">
-	                    					<button class="btn btn-dark w-25" name="id" value="${produto.codigo}">Comprar</button>
+	                    					<button class="btn btn-dark w-30" name="id" value="${produto.codigo}">Comprar</button>
 	                    				</form>
 	            					</div>
 	            			</div>
@@ -69,81 +69,7 @@
                		</c:forEach>
                	</div>
 			</div>
-
             <hr>
-
-            <!-- <h1>Hamburguers</h1>
-
-            <div class="card-deck">
-
-                <div  class="card">
-                  <img class="card-img-top" src="./img/ambug.jpg" alt="Pizza">
-                  <div class="card-body">
-                    <small class="card-title">Monsterburguer - hamburguer, chedar, baicon, salada, tomate e cebola</small>
-                    <h1 class="card-text text-dark">R$ 16,59</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="./img/ambug.jpg" alt="pizza">
-                  <div class="card-body">
-                    <small class="card-title">Monsterburguer - hamburguer, chedar, baicon, salada, tomate e cebola</small>
-                    <h1 class="card-text text-dark">R$ 16,59</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="./img/ambug.jpg" alt="pizza">
-                  <div class="card-body">
-                    <small class="card-title">Monsterburguer - hamburguer, chedar, baicon, salada, tomate e cebola</small>
-                    <h1 class="card-text text-dark">R$ 16,59</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-
-                  </div>
-                </div>
-
-            </div>
-
-            <hr>
-
-            <h1>Batatas</h1>
-
-            <div class="card-deck">
-
-                <div class="card">
-                  <img class="card-img-top" src="./img/batata.jpg" alt="Pizza">
-                  <div class="card-body">
-                    <small class="card-title">Batata Frita - baata cheddar, calabresa picada</small>
-                    <h1 class="card-text text-dark">R$ 18,99</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="./img/batata.jpg" alt="pizza">
-                  <div class="card-body">
-                    <small class="card-title">Batata Frita - baata cheddar, calabresa picada</small>
-                    <h1 class="card-text text-dark">R$ 18,99</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="./img/batata.jpg" alt="pizza">
-                  <div class="card-body">
-                    <small class="card-title">Batata Frita - baata cheddar, calabresa picada</small>
-                    <h1 class="card-text text-dark">R$ 18,99</h1>
-                    <a href="produto.html" class="btn btn-dark w-25 ">Comprar</a>
-
-                  </div>
-                </div>
-
-            </div>
 			 -->
             <hr>
 

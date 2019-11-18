@@ -32,7 +32,7 @@
 <script defer src="js/bootstrap.min.js"></script>
 
 
-<title>Home</title>
+<title>Cadastrar Produto</title>
 </head>
 <body>
 
@@ -64,9 +64,6 @@
 
 			</nav>
 
-			<hr>
-			<hr>
-			<hr>
 			<hr>
 
 			<form action="cadastrarProduto" method="post" enctype="multipart/form-data" id="cadastro">

@@ -26,7 +26,7 @@
     <script defer src="js/bootstrap.min.js"></script>
 
 
-    <title>Home</title>
+    <title>${produtos.tipo} - ${produtos.nome}</title>
 </head>
 <body>
 
