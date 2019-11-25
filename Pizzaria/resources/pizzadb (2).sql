@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `pizzaDB`.`cliente` (
   `endereco` varchar(100) not null,
   `numEndereco` int not null,
   `senha` varchar(50) not null,
+  `deletado` enum('nao', 'sim') not null,
   PRIMARY KEY (`id_cliente`))
 ENGINE = InnoDB;
 
@@ -65,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `pizzaDB`.`produto` (
   `descricao` varchar(250),
   `image_source` varchar(150),
   `tipo` enum('Pizza','Hamburguer') not null,
+  `deletado` enum('nao', 'sim') not null,
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
@@ -104,14 +106,14 @@ alter table pedido
 
 insert into administrator values(null, 'matheus', 'matheus123', 'm123456','matheus@hotmail.com');
 
-insert into cliente values(null, '14575678924', 'Gabriel', 'Ferreira', 'gabriel@hotmail.com', 'Vila Mariana', 'R. Joaquim T√°vora', 255,'123pass123');
-insert into cliente values(null, '45678915492', 'Igor', 'Silva', 'igor@hotmail.com', 'Vila Madalena', 'R. Cordeiro Galv√£o', 1255,'senha478745');
-insert into cliente values(null, '68742397412', 'Jo√£o', 'Lopes', 'jo√£o@hotmail.com', 'Vila Formosa', 'R. Tirana', 415,'minhasenha1231454');
+insert into cliente values(null, '14575678924', 'Gabriel', 'Ferreira', 'gabriel@hotmail.com', 'Vila Mariana', 'R. Joaquim T·vora', 255,'123pass123','nao');
+insert into cliente values(null, '45678915492', 'Igor', 'Silva', 'igor@hotmail.com', 'Vila Madalena', 'R. Cordeiro Galv„o', 1255,'senha478745','nao');
+insert into cliente values(null, '68742397412', 'Jo„o', 'Lopes', 'jo„o@hotmail.com', 'Vila Formosa', 'R. Tirana', 415,'minhasenha1231454','nao');
 
-insert into produto values(null, 'Calabresa', 69.99, 0, 'Borda com catupiry, Calabresa, Cebola, Molho de tomate.', 'test.jpg', 'Pizza');
-insert into produto values(null, 'Mussarela', 69.99, 0, 'Borda com catupiry, Mussarela, Molho de tomate.', 'test.jpg','Pizza');
-insert into produto values(null, 'Frango', 69.99, 0, 'Frango, Cobertura de catupiry, Molho de tomate.', 'test.jpg','Pizza');
-insert into produto values(null, 'Picanha', 34.99, 0, '1 Hamburgue de picanha 180g, Molho da casa, Alface, Picles, Cheddar', 'test.jpg','Hamburguer');
+insert into produto values(null, 'Calabresa', 69.99, 0, 'Borda com catupiry, Calabresa, Cebola, Molho de tomate.', 'test.jpg', 'Pizza','nao');
+insert into produto values(null, 'Mussarela', 69.99, 0, 'Borda com catupiry, Mussarela, Molho de tomate.', 'test.jpg','Pizza','nao');
+insert into produto values(null, 'Frango', 69.99, 0, 'Frango, Cobertura de catupiry, Molho de tomate.', 'test.jpg','Pizza','nao');
+insert into produto values(null, 'Picanha', 34.99, 0, '1 Hamburgue de picanha 180g, Molho da casa, Alface, Picles, Cheddar', 'test2.jpg','Hamburguer','nao');
 
 -- select * from Cliente where email='gabriel@hotmail.com' and senha='123pass123';
 
