@@ -78,6 +78,8 @@ public class ManterProdutoController {
 	@RequestMapping(value ="/atualizarUmProduto", method = RequestMethod.POST, consumes = {"multipart/form-data"})
 	public String atualizarUmProduto(@Valid Produto produto, Model model, @RequestParam("foto") MultipartFile foto) {
 		try {
+			Produto produto2 = produtoService.selecionarProduto(produto.getCodigo());
+			produto.setImgSource(produto2.getImgSource());
 			produtoService.atualizarProduto(produto);
 			produtoService.gravarImagem(servletContext, produto, foto);
 			return "redirect:/adminProduto";

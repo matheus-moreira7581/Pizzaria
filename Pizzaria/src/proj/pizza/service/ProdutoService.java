@@ -37,7 +37,6 @@ public class ProdutoService {
 		if(!file.isEmpty()) {
 			BufferedImage src = ImageIO.read(new ByteArrayInputStream(file.getBytes()));
 			String path = servletContext.getRealPath(servletContext.getContextPath());
-			System.out.println(path);
 			path = path.substring(0, path.lastIndexOf(File.separatorChar));
 			String nomeArquivo = "img"+produto.getCodigo()+".jpg";
 			produto.setImgSource(nomeArquivo);
@@ -54,6 +53,7 @@ public class ProdutoService {
 	@Transactional
 	public int atualizarProduto(Produto produto) throws IOException{
 		produto.setDeletado(Produto.NAO);
+		System.out.println("produto source >>> " + produto.getImgSource());
 		return dao.atualizar(produto);
 	}
 	
