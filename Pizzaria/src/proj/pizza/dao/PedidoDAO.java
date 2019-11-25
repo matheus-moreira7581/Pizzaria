@@ -19,6 +19,8 @@ public class PedidoDAO {
 	
 	public int inserirPedido(Pedido pedido) throws IOException {
 		Cliente cliente = manager.find(Cliente.class, pedido.getCliente().getIdCliente());
+		System.out.println(cliente.toString());
+		cliente.setDeletado(Cliente.NAO);
 		pedido.setCliente(cliente);
 		manager.persist(pedido);
 		return pedido.getIdPed();

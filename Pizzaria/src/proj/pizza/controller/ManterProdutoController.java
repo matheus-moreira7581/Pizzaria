@@ -53,7 +53,7 @@ public class ManterProdutoController {
 	@RequestMapping(value ="/listarProduto", method = RequestMethod.GET)
 	public String telaListaProdutos(@RequestParam String tipo,Model model) {
 		try {
-			List<Produto> produtos = produtoService.buscarProdutos(tipo);
+			List<Produto> produtos = produtoService.buscarProdutosAtivos(tipo);
 			model.addAttribute("listProdutos", produtos);
 			return "listaProduto";
 		} catch (IOException e) {

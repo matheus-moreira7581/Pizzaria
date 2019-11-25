@@ -23,21 +23,20 @@ public class ProdutoDAO {
 	}
 	
 	public int atualizar(Produto produto) throws IOException{
-		Produto produto2 = manager.merge(produto);
-		produto2.setCodigo(produto.getCodigo());
-		produto2.setDesconto(produto.getDesconto());
-		produto2.setDescricao(produto.getDescricao());
-		produto2.setImgSource(produto.getImgSource());
-		produto2.setNome(produto.getNome());
-		produto2.setPreco(produto.getPreco());
-		produto2.setTipo(produto.getTipo());
-		
-		return produto2.getCodigo();
+//		Produto produto2 = manager.merge(produto);
+//		produto2.setCodigo(produto.getCodigo());
+//		produto2.setDesconto(produto.getDesconto());
+//		produto2.setDescricao(produto.getDescricao());
+//		produto2.setImgSource(produto.getImgSource());
+//		produto2.setNome(produto.getNome());
+//		produto2.setPreco(produto.getPreco());
+//		produto2.setTipo(produto.getTipo());
+		manager.merge(produto);
+		return produto.getCodigo();
 	}
 	
-	public int remover(int id) throws IOException {
-		Produto produto = manager.find(Produto.class, id);
-		manager.remove(produto);
+	public int remover(Produto produto) throws IOException {
+		manager.merge(produto);
 		return produto.getCodigo();
 	}
 	
@@ -58,6 +57,27 @@ public class ProdutoDAO {
 			jpql = "select p from Produto p where p.tipo = :tipo";
 			query = manager.createQuery(jpql);
 			query.setParameter("tipo", tipo);
+		}
+		
+		List<Produto> result = query.getResultList();
+		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Produto> listarProdutoAtivo(String tipo) throws IOException{
+		System.out.println("O tipo é: "+tipo);
+		String jpql;
+		Query query;
+		if(tipo.equals("all")) {
+			jpql = "select p from Produto p where p.deletado = :deletado";
+			query = manager.createQuery(jpql);
+			query.setParameter("deletado", Produto.NAO);
+		}
+		else {
+			jpql = "select p from Produto p where p.tipo = :tipo and p.deletado = :deletado";
+			query = manager.createQuery(jpql);
+			query.setParameter("tipo", tipo);
+			query.setParameter("deletado", Produto.NAO);
 		}
 		
 		List<Produto> result = query.getResultList();

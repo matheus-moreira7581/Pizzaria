@@ -46,8 +46,19 @@ public class Produto implements Serializable{
 	@Column(name="tipo")
 	private String tipo;
 	
-	private int qtdProduto;
+	@NotNull
+	@Column(name="deletado")
+	private String deletado;
 	
+	public static final String SIM = "sim";
+	public static final String NAO = "nao";
+
+	public static final String HAMBURGUER = "Hamburguer";
+	public static final String PIZZA = "Pizza";
+	public static final String ALL = "all";
+	
+	private int qtdProduto;
+
 	public int getQtdProduto() {
 		return qtdProduto;
 	}
@@ -56,11 +67,13 @@ public class Produto implements Serializable{
 		this.qtdProduto = qtdProduto;
 	}
 
-	public static final String HAMBURGUER = "Hamburguer";
-	public static final String PIZZA = "Pizza";
-	public static final String ALL = "all";
-	
+	public String getDeletado() {
+		return deletado;
+	}
 
+	public void setDeletado(String deletado) {
+		this.deletado = deletado;
+	}
 
 	public int getCodigo() {
 		return codigo;

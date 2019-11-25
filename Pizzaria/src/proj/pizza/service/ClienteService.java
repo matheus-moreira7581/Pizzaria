@@ -25,16 +25,21 @@ public class ClienteService {
 	
 	@Transactional
 	public int cadastrarCliente(Cliente cliente)throws IOException{
+		cliente.setDeletado(Cliente.NAO);
 		return dao.criar(cliente);
 	}
 	
 	@Transactional
 	public void excluirCliente(int id) throws IOException{
-		dao.excluirCliente(id);
+		Cliente cliente = selecionarCliente(id);
+		cliente.setDeletado(Cliente.SIM);
+		dao.excluirCliente(cliente);
+		System.out.println("Cliente Deletado > " + cliente.toString());
 	}
 	
 	@Transactional
 	public int atualizarCliente(Cliente cliente) throws IOException {
+		cliente.setDeletado(Cliente.NAO);
 		return dao.atualizar(cliente);
 	}
 	
@@ -61,6 +66,10 @@ public class ClienteService {
 	
 	public List<Cliente> listarClientes() throws IOException{
 		return dao.listarClientes();
+	}
+	
+	public List<Cliente> listarClientesAtivos() throws IOException{
+		return dao.listarClientesAtivos();
 	}
 	
 	

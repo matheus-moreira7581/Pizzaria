@@ -66,7 +66,7 @@ public class ManterAdminController {
 	@RequestMapping("/adminProduto")
 	public String telaAdminProduto(Model model) {
 		try {
-			List<Produto> produtos = produtoService.buscarProdutos(Produto.ALL);
+			List<Produto> produtos = produtoService.buscarProdutosAtivos(Produto.ALL);
 			model.addAttribute("listProdutos", produtos);
 			return "adminProduto";
 		} catch (IOException e) {
@@ -78,7 +78,7 @@ public class ManterAdminController {
 	
 	@RequestMapping("/adminCliente")
 	public String telaAdminCliente(Model model) throws IOException {
-		List<Cliente> cliente = clienteService.listarClientes();
+		List<Cliente> cliente = clienteService.listarClientesAtivos();
 		model.addAttribute("listCliente", cliente);
 		return "adminCliente";
 	}	

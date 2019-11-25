@@ -1,12 +1,15 @@
 package proj.pizza.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -48,10 +51,25 @@ public class Cliente implements Serializable{
 	@NotNull
 	@Column(name="senha")
 	private String senha;
-
-//	@OneToMany(mappedBy = "cliente")
+	
+	@NotNull
+	@Column(name="deletado")
+	private String deletado;
+	
+	public static final String SIM = "sim";
+	public static final String NAO = "nao";
+	
+//	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 //	private List<Pedido> pedidos;
 	
+	public String getDeletado() {
+		return deletado;
+	}
+
+	public void setDeletado(String deletado) {
+		this.deletado = deletado;
+	}
+
 	public int getIdCliente() {
 		return idCliente;
 	}
@@ -124,5 +142,10 @@ public class Cliente implements Serializable{
 		this.cpf = cpf;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", cpf=" + cpf + ", nome=" + nome + ", sobrenome=" + sobrenome
+				+ ", email=" + email + ", bairro=" + bairro + ", endereco=" + endereco + ", numCasa=" + numCasa
+				+ ", senha=" + senha + ", deletado=" + deletado + "]";
+	}
 }

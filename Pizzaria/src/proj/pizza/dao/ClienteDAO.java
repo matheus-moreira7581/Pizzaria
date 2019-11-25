@@ -25,9 +25,8 @@ public class ClienteDAO {
 	}
 	
 	
-	public void excluirCliente(int id) throws IOException {
-		Cliente cliente = manager.find(Cliente.class, id);
-		manager.remove(cliente);
+	public void excluirCliente(Cliente cliente) throws IOException {
+		manager.merge(cliente);
 	}
 	
 	public Cliente selecionar(int id) throws IOException {
@@ -50,23 +49,33 @@ public class ClienteDAO {
 	
 	
 	public int atualizar(Cliente cliente) throws IOException {
-		Cliente cliente2 = manager.merge(cliente);
-		cliente2.setIdCliente(cliente.getIdCliente());
-		cliente2.setCpf(cliente.getCpf());
-		cliente2.setEmail(cliente.getEmail());
-		cliente2.setEndereco(cliente.getEndereco());
-		cliente2.setNome(cliente.getNome());
-		cliente2.setSobrenome(cliente.getSobrenome());
-		cliente2.setNumCasa(cliente.getNumCasa());
-		cliente2.setSenha(cliente.getSenha());
-		
-		return cliente2.getIdCliente();
+//		Cliente cliente2 = manager.merge(cliente);
+//		cliente2.setIdCliente(cliente.getIdCliente());
+//		cliente2.setCpf(cliente.getCpf());
+//		cliente2.setEmail(cliente.getEmail());
+//		cliente2.setEndereco(cliente.getEndereco());
+//		cliente2.setNome(cliente.getNome());
+//		cliente2.setSobrenome(cliente.getSobrenome());
+//		cliente2.setNumCasa(cliente.getNumCasa());
+//		cliente2.setSenha(cliente.getSenha());
+		manager.merge(cliente);
+		return cliente.getIdCliente();
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Cliente> listarClientes() throws IOException {
-		String jpql = "select p from Cliente p";
+		String jpql = "select c from Cliente c";
 		Query query = manager.createQuery(jpql);
+		
+		List<Cliente> result = query.getResultList();
+		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Cliente> listarClientesAtivos() throws IOException {
+		String jpql = "select c from Cliente c where c.deletado=:deletado";
+		Query query = manager.createQuery(jpql);
+		query.setParameter("deletado", Cliente.NAO);
 		
 		List<Cliente> result = query.getResultList();
 		return result;

@@ -130,6 +130,7 @@
 							<input type="file" class="form-control"
 								id="validationDefaultUsername" name="foto"
 								aria-describedby="inputGroupPrepend2"">
+							<input type="hidden" name="deletado" value="nao">
 						</div>
 					</div>
 				</div>

@@ -52,7 +52,7 @@ public class RestManterProdutoController {
 	public @ResponseBody List<Produto> restListaProdutos(@RequestParam String tipo) {
 		List<Produto> produtos = null;
 		try {
-			produtos = produtoService.buscarProdutos(tipo);
+			produtos = produtoService.buscarProdutosAtivos(tipo);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

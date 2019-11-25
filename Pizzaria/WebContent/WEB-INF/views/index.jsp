@@ -70,9 +70,11 @@
                             <p class="lead">Nossa pizzas são uma ótima escolha para você afinal são exageradamente recheadas e com um gosto único e um toque especial para você querer voltar sempre!!</p>
                             <hr class="my-4">
                             <p>Nosso ingredientes são nosso carro chefe! Por isso é confidencial!</p>
-                            <form action="listarProduto" method="get">
+                           <!-- <form action="listarProduto" method="get">
                             	<button type="submit" name="tipo" value="Pizza" class="btn btn-success btn-lg">Comprar</button>
                             </form>
+                             --> 
+                              <a class="btn btn-success btn-lg" href="listarProduto?tipo=Pizza">Comprar</a>
                         </div>
                     </div>
                     <div class="row my-3" style="margin-left: 20px;">
@@ -81,9 +83,10 @@
                             <p class="lead">Nossa pizzas são uma ótima escolha para você afinal são exageradamente recheadas e com um gosto único e um toque especial para você querer voltar sempre!!</p>
                             <hr class="my-4">
                             <p>Nosso ingredientes são nosso carro chefe! Por isso é confidencial!</p>
-                            <form action="listarProduto" method="get">
+                           <!-- <form action="listarProduto" method="get">
                             	<button type="submit" name="tipo" class="btn btn-success btn-lg" value="Hamburguer">Comprar</button>
-                            </form>
+                            </form> --> 
+                            <a class="btn btn-success btn-lg" href="listarProduto?tipo=Hamburguer">Comprar</a>
                         </div>
                     </div>
             </div>

@@ -28,6 +28,7 @@ public class ProdutoService {
 	
 	@Transactional
 	public int novoProduto(Produto produto, MultipartFile img) throws IOException {
+		produto.setDeletado(Produto.NAO);
 		return dao.criar(produto);
 	}
 	
@@ -52,12 +53,15 @@ public class ProdutoService {
 	
 	@Transactional
 	public int atualizarProduto(Produto produto) throws IOException{
+		produto.setDeletado(Produto.NAO);
 		return dao.atualizar(produto);
 	}
 	
 	@Transactional
 	public int removerProduto(int id) throws IOException{
-		return dao.remover(id);
+		Produto produto = selecionarProduto(id);
+		produto.setDeletado(Produto.SIM);
+		return dao.remover(produto);
 	}
 	
 	public Produto selecionarProduto(int codigo) throws IOException{
@@ -65,8 +69,11 @@ public class ProdutoService {
 	}
 	
 	public List<Produto> buscarProdutos(String tipo) throws IOException{
-		
 		return dao.listarProduto(tipo);
+	}
+	
+public List<Produto> buscarProdutosAtivos(String tipo) throws IOException{
+		return dao.listarProdutoAtivo(tipo);
 	}
 	
 }
