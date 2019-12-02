@@ -48,10 +48,9 @@
                 </div>
             </nav>
             <hr>
-            <hr>
-            <hr>
-            <hr>
-            <div class=""><h1>Carrinho de pedidos</h1></div>
+            
+          
+            <div class="section"><h1>Carrinho de pedidos</h1></div>
             <div class="row col-md-12 my-5 ">
                <div class=" card col-md-8">
                 <h3 class="row"><strong>Itens</strong></h3>

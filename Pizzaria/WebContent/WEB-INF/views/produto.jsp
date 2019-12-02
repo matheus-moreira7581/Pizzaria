@@ -43,14 +43,7 @@
 
             <div class="container">
 
-                 <div class="d-inline row">
-                    <img src="./img/pizza.jpg" style="width: 80px" alt="">
-                    <img src="./img/pizza.jpg" style="width: 80PX" alt="">
-                    <img src="./img/pizza.jpg" style="width: 80PX" alt="">
-                    <img src="./img/pizza.jpg" style="width: 80PX" alt="">
-                    <img src="./img/pizza.jpg" style="width: 80PX" alt="">
-                    
-                </div>
+                
                 
 
                 <div class="row my-4">

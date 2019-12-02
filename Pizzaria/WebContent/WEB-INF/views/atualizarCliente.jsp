@@ -139,11 +139,9 @@
 
 
 					<div class="col-md-6 mb-3">
-						<label for="validationDefault06">Senha</label> 
-						<input
+						<label for="validationDefault06">Senha</label> <input
 							type="password" class="form-control" name="senha"
 							id="validationDefault05" placeholder="Senha.." value="${clientes.senha}" required>
-						<input type="hidden" name="deletado" value="nao">	
 					</div>
 
 				</div>
@@ -152,14 +150,13 @@
 
 
 					<div class="col-md-6 mb-3">
-						<label for="validationDefault06">Confirmar Senha</label> 
-						<input
+						<label for="validationDefault06">Confirmar Senha</label> <input
 							type="password" class="form-control" id="validationDefault05"
 							placeholder="Senha.." value="${clientes.senha}" required>
-						
+						<input type="hidden" name="deletado" value="nao">
 					</div>
+
 				</div>
-				
 
 
 				<button class="btn btn-success" type="submit">Atualizar</button>

@@ -34,11 +34,12 @@ public class ClienteDAO {
 	}
 	
 	public Cliente carregar(String email, String senha) throws IOException{
-		String jpql = "select c from Cliente c where c.email=:email and c.senha=:senha";
+		String jpql = "select c from Cliente c where c.email=:email and c.senha=:senha and c.deletado=:deletado";
 		
 		Query query = manager.createQuery(jpql);
 		query.setParameter("email", email);
 		query.setParameter("senha", senha);
+		query.setParameter("deletado", Cliente.NAO);
 		
 		Cliente resultado = (Cliente)query.getSingleResult();
 		System.out.println("retornado: " + resultado.getEmail());

@@ -105,6 +105,7 @@
 						<label>Desconto</label> <input type="text" class="form-control"
 							id="validationDefaultUsername" name="desconto"
 							aria-describedby="inputGroupPrepend2" required>
+							<input type="hidden" name="deletado" value="nao">
 					</div>
 					
 				</div>
@@ -124,7 +125,6 @@
 							<input type="file" class="form-control"
 								id="validationDefaultUsername" name="foto"
 								aria-describedby="inputGroupPrepend2">
-							<input type="hidden" name="deletado" value="nao">
 						</div>
 					</div>
 				</div>

@@ -39,7 +39,20 @@
                 <div class="collapse navbar-collapse" id="navbarSite">
 
 
-                    <div class="input-group col-md-10 my-2 "></div>
+                    <div class="input-group col-md-10 my-2 ">
+
+                        <div class="input-group-prepend navbar-item ">
+
+                            <button class="btn btn-success  border-success input-group-text" id="basic-addon1"><img
+                                    src="https://img.icons8.com/material-rounded/24/000000/search.png"></button>
+
+                        </div>
+
+                        <input type="text" class="form-control col-md-6"
+                            placeholder="Search for Products, Brands and More.." aria-label="Username"
+                            aria-describedby="basic-addon1">
+
+                    </div>
                     <c:if test="${empty clienteLogado}">
                         <a href="cadastro" class="btn text-sucess">Cadastrar</a>
                         <a href="telaLogin" class="btn btn-success">Entrar</a>
@@ -53,8 +66,6 @@
                 </div>
 
             </nav>
-            <hr>
-            <hr>
             <hr>
             <hr>
             <h1>Escolha uma forma de pagamento</h1>

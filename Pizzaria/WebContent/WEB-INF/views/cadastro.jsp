@@ -116,7 +116,6 @@
                       <div class="col-md-6 mb-3">
                         <label for="validationDefault05">Senha</label>
                         <input type="password" class="form-control" name="senha" id="password01" placeholder="Senha.." required>
-                        <input type="hidden" name="deletado" value="nao">
                       </div>
                       
                        <div class="col-md-6 mb-3" id="password02-container">
@@ -130,6 +129,7 @@
 						<div class="col-md-6 mb-3" id="cpf-container">
 							<label for="validadetionDefault06">CPF</label>
 							<input type="text" class="form-control" name=cpf id="cpf" required>
+							<input type="hidden" name="deletado" value="nao">
 						</div>
 					</div>
                   

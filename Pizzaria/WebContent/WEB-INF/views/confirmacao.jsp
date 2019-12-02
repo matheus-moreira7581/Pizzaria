@@ -28,12 +28,13 @@
             <hr>
             <hr>
             <hr>
-            <hr>
+             	<img src=".//img/confirmed.png" />
+
             <hr>
             <h1>Pedido <strong>${pedido.idPed}</strong> realizado com sucesso!</h1>
             <h2>Acompanhe pelo Email e SMS</h2>
             <hr>
-			<a href="index" class="btn btn-outline-success my-5 w-45">Ok</a>
+			<a href="index" class="btn btn-success my-5 w-50">Ok</a>
 
         </div>
     </div>

@@ -106,9 +106,9 @@ alter table pedido
 
 insert into administrator values(null, 'matheus', 'matheus123', 'm123456','matheus@hotmail.com');
 
-insert into cliente values(null, '14575678924', 'Gabriel', 'Ferreira', 'gabriel@hotmail.com', 'Vila Mariana', 'R. Joaquim T·vora', 255,'123pass123','nao');
-insert into cliente values(null, '45678915492', 'Igor', 'Silva', 'igor@hotmail.com', 'Vila Madalena', 'R. Cordeiro Galv„o', 1255,'senha478745','nao');
-insert into cliente values(null, '68742397412', 'Jo„o', 'Lopes', 'jo„o@hotmail.com', 'Vila Formosa', 'R. Tirana', 415,'minhasenha1231454','nao');
+insert into cliente values(null, '14575678924', 'Gabriel', 'Ferreira', 'gabriel@hotmail.com', 'Vila Mariana', 'R. Joaquim T√°vora', 255,'123pass123','nao');
+insert into cliente values(null, '45678915492', 'Igor', 'Silva', 'igor@hotmail.com', 'Vila Madalena', 'R. Cordeiro Galv√£o', 1255,'senha478745','nao');
+insert into cliente values(null, '68742397412', 'Jo√£o', 'Lopes', 'jo√£o@hotmail.com', 'Vila Formosa', 'R. Tirana', 415,'minhasenha1231454','nao');
 
 insert into produto values(null, 'Calabresa', 69.99, 0, 'Borda com catupiry, Calabresa, Cebola, Molho de tomate.', 'test.jpg', 'Pizza','nao');
 insert into produto values(null, 'Mussarela', 69.99, 0, 'Borda com catupiry, Mussarela, Molho de tomate.', 'test.jpg','Pizza','nao');

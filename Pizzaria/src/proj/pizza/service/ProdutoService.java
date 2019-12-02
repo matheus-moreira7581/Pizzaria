@@ -47,6 +47,9 @@ public class ProdutoService {
 			}
 			ImageIO.write(src, "jpg", destination);
 		}
+		else {
+			produto.setImgSource("test.jpg");
+		}
 		
 	}
 	

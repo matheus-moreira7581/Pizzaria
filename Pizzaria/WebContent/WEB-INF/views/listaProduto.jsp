@@ -41,7 +41,7 @@
             <hr>
             <hr>
 
-            <div class="row"><h2><strong>Pordutos</strong></h2></div>
+            <div class="row"><h2><strong>Produtos</strong></h2></div>
 
             <hr>
 

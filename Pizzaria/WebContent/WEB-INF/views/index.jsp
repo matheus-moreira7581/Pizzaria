@@ -31,65 +31,50 @@
 
     <div  class="pai">
         <div class="corpo">
-           <c:import url="menu.jsp" />
-            <hr>
-            <hr>
-                <!-- Carousel -->
-            <div id="corouselSite" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#corouselSite" data-slide-to="0" class="active bg-success"></li>
-                        <li data-target="#corouselSite" data-slide-to="1" class="bg-danger"></li>
-                        <li data-target="#corouselSite" data-slide-to="2" class="bg-danger"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./img/pizzaaaa.jpg" class="img-fluid d-block " style="filter: blur(1px)" alt="...">
-                            <div class="carousel-caption">
-                                <h1 style="font-size: 50px;">Tem Pizza!!</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#corouselSite" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#corouselSite" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
-            </div>
+           <c:import url="menu.jsp" /> 
+           
+            
+            
+            <header>
+            </header>
+            
             <hr>
             <hr><hr>
-                <div class="card-group col-md-8">
-                    <div class="row my-5">
-                        <h1> <strong>Ta com fome? Porque a hora é agora!</strong> </h1>
-                    </div>
-                    <div class="row mll" style="margin-left: 20px;">
-                        <div class="jumbotron fundo-bcg">
-                            <h1 class="display-4">Que tal uma Pizza?</h1>
-                            <p class="lead">Nossa pizzas são uma ótima escolha para você afinal são exageradamente recheadas e com um gosto único e um toque especial para você querer voltar sempre!!</p>
-                            <hr class="my-4">
-                            <p>Nosso ingredientes são nosso carro chefe! Por isso é confidencial!</p>
-                           <!-- <form action="listarProduto" method="get">
-                            	<button type="submit" name="tipo" value="Pizza" class="btn btn-success btn-lg">Comprar</button>
+            
+                <div class="indexBanner">
+                
+                	<div class=bn1>          	
+                		<img src=".//img/lanche.png">
+                		
+                		<div class="textLanche">
+                			<h1>Que tal um Hamburguer?</h1>
+                			<h5 class="text-success">Experimente algo enorme no menor preço!</h5>
+                			<form action="listarProduto" method="get">
+                            	<button type="submit" name="tipo" value="Hamburguer" class="btnLanche">Comprar</button>
                             </form>
-                             --> 
-                              <a class="btn btn-success btn-lg" href="listarProduto?tipo=Pizza">Comprar</a>
-                        </div>
+                			
+                		</div>             		
+                	</div>
+                	
+                	<section>
+                	</section>
+                	
+                    <div class="bn2">
+                    	<div class="">
+                			<h1>Que tal uma Pizza?</h1>
+                			<h5 class="text-success">Não perca tempo! as melhores promoções do mercado</h5>
+                			
+                		</div>
+                		
                     </div>
-                    <div class="row my-3" style="margin-left: 20px;">
-                        <div class="jumbotron fundo-bcg0">
-                            <h1 class="display-4">Talvez um Hamburguer?</h1>
-                            <p class="lead">Nossa pizzas são uma ótima escolha para você afinal são exageradamente recheadas e com um gosto único e um toque especial para você querer voltar sempre!!</p>
-                            <hr class="my-4">
-                            <p>Nosso ingredientes são nosso carro chefe! Por isso é confidencial!</p>
-                           <!-- <form action="listarProduto" method="get">
-                            	<button type="submit" name="tipo" class="btn btn-success btn-lg" value="Hamburguer">Comprar</button>
-                            </form> --> 
-                            <a class="btn btn-success btn-lg" href="listarProduto?tipo=Hamburguer">Comprar</a>
-                        </div>
+                    
+                    <div class="aside1">
+                    	<form action="listarProduto" method="get">
+                           <button type="submit" name="tipo" value="Pizza" class="btn1">Comprar</button>
+                        </form>
                     </div>
-            </div>
+                	
+                </div>
             <c:import url="rodape.jsp" />
         </div>
     </div>
